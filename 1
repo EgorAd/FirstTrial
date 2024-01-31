@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace HelloWorld
+{
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
+		  double a1 = 23/9f;
+			Console.WriteLine("Выражение 1: Точное" + "{0: 0.######}" ,a1);
+			Console.WriteLine("Введите выражение 1: Приблизительное ");
+			double a2 = Convert.ToDouble(Console.ReadLine());
+			Console.WriteLine("Число равно " + a2);
+			double b1 = Math.Sqrt(87);
+			Console.WriteLine("Выражение 2: Точное " + "{0: 0.######}" ,b1);
+			Console.WriteLine("Введите выражение 2: Приблизительное ");
+			double b2 = Convert.ToDouble(Console.ReadLine());
+			Console.WriteLine("Число равно" + b2);
+			double A = Math.Abs(a1 - a2);
+			Console.WriteLine("Выражение 1: Абс.Погрешность = " + "{0: 0.######}",A);
+			double B = Math.Abs(b1 - b2);
+			Console.WriteLine("Выражение 2: Абс.Погрешность = " + "{0: 0.######}",B);
+			double Ap = 0.005 / a2;
+			Console.WriteLine("Выражение 1: Отн.Погрешность = " + "{0: 0.######}",Ap);
+			double Bp = 0.003 / b2;
+			Console.WriteLine("Выражение 1: Отн.Погрешность = " + "{0: 0.######}",Bp);
+			Console.ReadKey();
+		}
+	}
+}
