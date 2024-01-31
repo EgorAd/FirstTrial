@@ -9,13 +9,13 @@ namespace HelloWorld
 	{
 		public static void Main(string[] args)
 		{
-		  double a1 = 23/9f;
-			Console.WriteLine("Выражение 1: Точное" + "{0: 0.######}" ,a1);
+			Console.WriteLine("Введите выражение 1: Точное");
+   			double a1 = Convert.ToDouble(Console.ReadLine());
 			Console.WriteLine("Введите выражение 1: Приблизительное ");
 			double a2 = Convert.ToDouble(Console.ReadLine());
 			Console.WriteLine("Число равно " + a2);
-			double b1 = Math.Sqrt(87);
-			Console.WriteLine("Выражение 2: Точное " + "{0: 0.######}" ,b1);
+			Console.WriteLine("Введите выражение 2: Точное ");
+   			double b1 = Convert.ToDouble(Console.ReadLine());
 			Console.WriteLine("Введите выражение 2: Приблизительное ");
 			double b2 = Convert.ToDouble(Console.ReadLine());
 			Console.WriteLine("Число равно" + b2);
@@ -23,10 +23,16 @@ namespace HelloWorld
 			Console.WriteLine("Выражение 1: Абс.Погрешность = " + "{0: 0.######}",A);
 			double B = Math.Abs(b1 - b2);
 			Console.WriteLine("Выражение 2: Абс.Погрешность = " + "{0: 0.######}",B);
-			double Ap = 0.005 / a2;
-			Console.WriteLine("Выражение 1: Отн.Погрешность = " + "{0: 0.######}",Ap);
-			double Bp = 0.003 / b2;
-			Console.WriteLine("Выражение 1: Отн.Погрешность = " + "{0: 0.######}",Bp);
+  			Console.WriteLine("Введите выражение 1: Абс.Погрешность");
+			double Apogr = Convert.ToDouble(Console.ReadLine());
+   			double AP = Apogr / a2;
+      			Console.WriteLine("Выражение 1: Отн.Погрешность = " + "{0: 0.######}",AP);
+			Console.WriteLine("Введите выражение 2: Абс.Погрешность");
+			double Bpogr = Convert.ToDouble(Console.ReadLine());
+   			double BP = Bpogr / b2;
+			Console.WriteLine("Выражение 1: Отн.Погрешность = " + "{0: 0.######}",BP);
+   			if (AP > BP) Console.WriteLine("Выражение 2 точнее")
+      			else Console.WriteLine("Выражение 1 точнее")
 			Console.ReadKey();
 		}
 	}
